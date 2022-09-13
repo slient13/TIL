@@ -32,14 +32,14 @@
 파일을 읽고 그 내용에 대해 `$callback`을 실행한다.
 - `path: string` // 읽을 파일의 경로이다.
 - `encoding: string` // 읽을 파일의 인코딩이다. 생략시 `<Buffer>` 자료형에 바이너리 형태로 읽어온다.
-- `callback: ($err, $data) -> void`: 읽은 내용을 처리할 함수이다.  2개의 인수를 받으며, `err` 인수는 에러 발생 시 그것에 대한 정보를 (평상시에는 `undefined` 이다), `data`는 읽은 파일의 내용을 가지고 있다.
+- `callback: ($err, $data) => void`: 읽은 내용을 처리할 함수이다.  2개의 인수를 받으며, `err` 인수는 에러 발생 시 그것에 대한 정보를 (평상시에는 `undefined` 이다), `data`는 읽은 파일의 내용을 가지고 있다.
 
 ### 파일 탐색
 `fs.readdir($path, $callback)`
 
 특정 경로 아래 존재하는 파일을 검색하고 각 파일에 대한 주소를 추출해 처리한다.
 - `path: string` // 읽을 폴더의 경로이다.
-- `callback: ($err, $files) -> void` // 읽은 내용을 처리할 함수이다. `err`는 에러 발생 시 그것에 대한 정보를, `files`는 확인한 파일들의 상대 경로 정보를 가지고 있다.
+- `callback: ($err, $files) => void` // 읽은 내용을 처리할 함수이다. `err`는 에러 발생 시 그것에 대한 정보를, `files`는 확인한 파일들의 상대 경로 정보를 가지고 있다.
 
 ### 파일 쓰기
 `fs.writeFile($path, $contents, [$option...], $callback)`
@@ -52,7 +52,7 @@
 	- `mode = 0o666` // 파일의 접근 권한이다. 기본값의 의미는 ==rw-rw-rw-==이다.
 	- `flag = 'w'` // 파일 열람 시 모드를 지정한다. 기본값의 의미는 ==새로 작성하되, 기존에 같은 이름을 가진 파일이 있다면 덮어써라==이다. 자세한 것은 다음 링크 참고. [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#file-system-flags)
 	- `signal` // 정확히는 모르겠으나 설명대로면 파일 작성 도중 중단하는 것을 허용하는지 여부를 지정할 수 있는 입력값으로 추정된다.
-- `callback: (err) => {}` // 파일 작성이 완료되고 난 뒤 동작을 지정한다. 오류가 발생하면 `err` 객체에 정보가 담겨나오며, 이를 활용하여 예외처리를 할 수 있다.
+- `callback: (err) => void` // 파일 작성이 완료되고 난 뒤 동작을 지정한다. 오류가 발생하면 `err` 객체에 정보가 담겨나오며, 이를 활용하여 예외처리를 할 수 있다.
 
 ### 파일 변경
 #### 내용 수정하기
@@ -64,7 +64,14 @@
 파일의 이름을 변경한다.
 - `oldPath` // 기존 파일의 경로
 - `newPath` // 새 파일의 경로. 만약 해당 경로상에 중복되는 파일이 존재하는 경우 덮어쓴다.
-- `callback: (err) => {}` // 변경 작업 완료 후 혹은 에러 발생 시 처리 동작.
+- `callback: (err) => void` // 변경 작업 완료 후 혹은 에러 발생 시 처리 동작.
+
+### 파일 삭제
+`fs.unlink($path, $callback)`
+
+지정한 파일을 삭제한다.
+- `path` // 삭제할 파일의 경로
+- `callback: (err) => void` // 파일 삭제 이후 수행될 코드
 
 ### 전체 참고
 - [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#fswritefilefile-data-options-callback)
@@ -91,8 +98,14 @@ req.on('end', () => {
 ## 응답
 ### 리다이렉션
 ```js
-res.writeHead(302, {Location: $redirection-target-url}).end();
+// 주소 입력이 오로지 영어로만 이루어지면 이렇게 해도 되나, 한글 등 다른 언어가 포함되면 오류가 발생한다.
+// res.writeHead(302, {Location: $redirection-target-url}).end();
+// 한글을 받을 수 있도록 수정한 형태
+res.writeHead(302, {Location: EncodingURI($redirection-target-url)}).end();
 ```
+
+## 보안
+[[웹 보안]] 참고
 
 # 참고 문서
 [[참고자료#nodeJS]]

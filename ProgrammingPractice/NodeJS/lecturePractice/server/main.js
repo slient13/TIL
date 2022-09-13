@@ -1,133 +1,114 @@
 const http = require('http'); // http 프로토콜 통신을 위한 모듈 로드.
 const fs = require('fs');     // 파일 입출력을 위한 모듈 로드
 const url = require('url');   // url 파싱을 위한 모듈 로드
-const path = require('path'); // 경로 데이터를 다루기 위한 모듈
-const { checkPrimeSync } = require('crypto');
-
-
+const template = require('./lib/template');
+//
 var app = http.createServer(function (req, res) {   // 서버를 만들며 이에 대한 요청 수령 및 응답 코드 작성
-    let url_string = req.url;  // 요청한 url을 저장
-    let pathData = url_string
-    var queryStartIndex = url_string.indexOf('?');
-    queryStartIndex !== -1 ? pathData = url_string.substring(0, queryStartIndex) : "";
-    let queryData = url.parse(url_string, true).query;
-    let id = queryData.id;
-    let title, header, contents = undefined;
-    const render = () => {
-        !header ? header = title : "";
-
-        let template = `
-            <!DOCTYPE html>
-            <html lang="ko">
-            <head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>${title}</title>
-            </head>
-            <body>
-                <h1>${header}</h1>
-                ${contents}
-                <a href="/create">create</a>
-                <a href="/">home</a>
-            </body>
-            </html>
-        `;
+    let pathData, queryData;
+    const setUrlData = () => {
+        var url_string = req.url;  // 요청한 url을 저장
+        pathData = url_string   // 질의문을 제외한 요청 경로
+        var queryStartIndex = url_string.indexOf('?');
+        queryStartIndex !== -1 ? pathData = url_string.substring(0, queryStartIndex) : "";
+        queryData = url.parse(url_string, true).query;
+    }
+    setUrlData();
+    //
+    const render = (title, header, contents) => {
+        !header ?? (header = title);
 
         res.writeHead(200);    // 정상 출력 되었다는 의미로 헤더에 200을 기록해 반환.
-        res.end(template); // `fs`로 로컬에서 파일을 읽어 그 내용을 요청한 클라이언트에게 전달함.
-    }
-    const display = () => {
+        res.end(template.base(title, header, contents)); // `fs`로 로컬에서 파일을 읽어 그 내용을 요청한 클라이언트에게 전달함.
+    };
+    const displayPage = (id) => {
         if (id) {
             title = id;
-            fs.readFile(`./data/${title}.txt`, 'utf-8', (err, data) => {
+            const setContents = (err, data) => {
                 if (err) {
                     // console.log(`Error: No matched file [${title}]`);
                     header = "undefined";
-                    contents = "<p>There is no matched file.</p>";
+                    contents = "There is no matched file.";
                 }
                 else {
                     header = title;
-                    contents = `<pre style="white-space: pre-wrap">${data}</pre>`;
-                    contents += `<br><a href="/update?id=${id}">update</a>`;
+                    contents = template.contentPage(id, data);
                 }
-                render();
-            });
+                render(title, header, contents);
+            }
+            fs.readFile(`./data/${title}.txt`, 'utf-8', setContents);
         }
         else {
             title = "Home";
             header = "Welcome";
             contents = "";
-            const getFileList = (files) => {
-                let linkList = "";
-                files.filter(f => path.extname(f) === '.txt')
-                    .map(f => `<a href="./?id=${path.basename(f, '.txt')}">${path.basename(f, '.txt')}</a>`)
-                    .map(e => `<li>${e}</li>`)
-                    .forEach(e => linkList += e);
-                linkList = `<ul>${linkList}</ul>`;
-                return linkList;
-            }
 
             fs.readdir("./data", (err, files) => {
-                if (err) {
-                    console.log(err);
-                }
-                let linkList = getFileList(files);
-
-                contents += `${linkList}<br/><br/>`
-                render();
+                !err ?? console.log(err);
+                contents += template.mainPage(files);
+                render(title, header, contents);
             });
         }
+    };
+    const redirect = (target) => {
+        try {
+            // res.writeHead(302, { Location: target }); // 이와 같이 하면 한글 주소가 주어질 시 오류가 남.
+            res.writeHead(302, { Location: encodeURI(target) });
+            res.end();
+        }
+        catch {
+            console.log(`Error: location = ${target}`);
+            res.writeHead(302, { Location: '/' }).end();
+        }        
     }
+    //
+    let id = queryData.id;
+    let title, header, contents;
     if (pathData === '/') {
-        display();
+        displayPage(id);
     }
     else if (pathData === '/create') {
-        const setForm = () => {
-            return [""].map(e => e + `<input type="text" name="title" placeholder="제목을 적으시오">`)
+        const getCreateFormField = () => {
+            return [""]
+                .map(e => e + `<input type="text" name="title" placeholder="제목을 적으시오">`)
                 .map(e => e + `<br><textarea name="desc" placeholder="내용을 적으시오"></textarea>`)
                 .map(e => e + `<br><input type="submit">`)
                 .map(e => `<form action="http://localhost:3000/create/process" method="POST" enctype="Application/json">${e}</form>`);
         }
-
         title = "Create";
         header = "Create File";
-        contents = setForm();
-
-        render();
+        contents = getCreateFormField();
+        render(title, header, contents);
     }
     else if (pathData === '/create/process') {
         if (req.method == 'POST') {
             let data = '';
-            req.on('data', (chunk) => {
-                data += chunk;
-            })
-            req.on('end', () => {   // 서버가 모든 데이터를 수신했을 때
+            const writeFile = () => {
                 const urlSP = new URLSearchParams(data);
                 title = urlSP.get("title");
                 contents = urlSP.get("desc");
+                contents = contents.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
                 fs.writeFile(`./data/${title}.txt`, contents, 'utf-8', (err) => {
-                    res.writeHead(302, { Location: `/?id=${title}` });
-                    res.end();
+                    if (err) console.log(err);
+                    redirect(`/?id=${title}`)
                 })
-            });
+            }
+            req.on('data', (chunk) => {
+                data += chunk;
+            })
+            req.on('end', writeFile);
         }
     }
     else if (pathData === '/update') {
-        if (!id) {
-            res.writeHead(404);
-            res.end("Not found");
-        }
+        if (!id) res.writeHead(404).end("Not found");
 
         title = `Update: ${id}`;
-        let file_contents
-        const createFormField = () => {
+        const getUpdateFormField = (contents) => {
             return `
                 <form method="post" action="/update/process">
                     <input type="hidden" name="old_title" value="${id}"/><br/>
                     <input type="text" name="new_title" value="${id}"/><br/>
-                    <textarea name="new_contents">${file_contents}</textarea><br/>
+                    <textarea name="new_contents">${contents}</textarea><br/>
                     <input type="submit"/>
                 </form>
             `;
@@ -135,12 +116,11 @@ var app = http.createServer(function (req, res) {   // 서버를 만들며 이�
         fs.readFile(`./data/${id}.txt`, encoding = 'utf8', (err, data) => {
             if (err) console.log(err);
             file_contents = data;
-            contents = createFormField();
-            render();
+            contents = getUpdateFormField(file_contents);
+            render(title, header, contents);
         });
     }
-    else if (pathData === '/update/process') {        
-        
+    else if (pathData === '/update/process') {
         if (req.method == 'POST') {
             let data = '';
             req.on('data', (chunk) => {
@@ -151,19 +131,33 @@ var app = http.createServer(function (req, res) {   // 서버를 만들며 이�
                 let old_title = urlSP.get('old_title');
                 let new_title = urlSP.get('new_title');
                 let new_contents = urlSP.get('new_contents');
-                
-                fs.rename(`./data/${old_title}.txt`, `./data/${new_title}.txt`, (err) => {!err ?? console.log(err);});
+                new_contents = new_contents.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+                fs.rename(`./data/${old_title}.txt`, `./data/${new_title}.txt`, (err) => { !err ?? console.log(err); });
                 fs.writeFile(`./data/${new_title}.txt`, new_contents, 'utf-8', (err) => {
-                    res.writeHead(302, { Location: `/?id=${new_title}` });
-                    res.end();
+                    if (err) console.log(err);
+                    redirect(`/?id=${new_title}`);
                 })
             });
         }
     }
-    else {
-        res.writeHead(404);
-        res.end("Not found");
+    else if (pathData === '/delete/process') {
+        if (req.method == 'POST') {
+            let data = '';
+            req.on('data', (chunk) => {
+                data += chunk;
+            })
+            req.on('end', () => {   // 서버가 모든 데이터를 수신했을 때
+                const urlSP = new URLSearchParams(data);
+                let id = urlSP.get('id');
+
+                fs.unlink(`./data/${id}.txt`, (err) => {
+                    !err ?? console.log(err);
+                    redirect('/');
+                })
+            });
+        }
     }
+    else res.writeHead(404).end("Not found");
 });
 app.listen(3000);
