@@ -1,3 +1,5 @@
+#inProcess 
+
 # Proxy
 [[#trap]]을 이용하여 [[javascript]] 엔진의 저수준 연산을 가로채 대신 다른 동작을 하도록 한다. 인수는 `(target, handler)`이며, `handler`에는 오버라이딩 하길 원하는 [[#reflection]] 값을 지정해준다.
 

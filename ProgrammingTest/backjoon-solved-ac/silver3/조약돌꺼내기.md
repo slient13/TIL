@@ -1,5 +1,5 @@
 ---
-tags: ["코딩 테스트"]
+tags: ["codingTest"]
 ---
 
 # 개요
