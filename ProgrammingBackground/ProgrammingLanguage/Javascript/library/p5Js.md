@@ -1,4 +1,4 @@
-#motionGraphic #javascript 
+#motionGraphic
 
 # 개요 
 웹 환경에서 모션 그래픽을 구현하기 위한 기능을 제공하는 javascript 라이브러리
