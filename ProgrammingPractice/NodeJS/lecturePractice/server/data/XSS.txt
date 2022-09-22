@@ -1,3 +1,0 @@
-&lt;script&gt;
-alert("침입 당함!");
-&lt;/script&gt;
