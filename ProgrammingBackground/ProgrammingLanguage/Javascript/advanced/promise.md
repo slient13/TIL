@@ -75,4 +75,4 @@ promise
 ```
 
 # 참고 자료 
-[[참고자료#promise]]
+[[외부링크 모음#promise]]

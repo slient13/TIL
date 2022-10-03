@@ -47,4 +47,4 @@
 
 *참고*: [Basic Features: Environment Variables | Next.js (nextjs.org)](https://nextjs.org/docs/basic-features/environment-variables)
 
-# [[참고자료#NextJs]]
+# [[외부링크 모음#NextJs]]

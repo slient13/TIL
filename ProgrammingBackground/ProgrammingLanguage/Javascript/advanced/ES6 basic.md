@@ -82,4 +82,4 @@ console.log(proxy.age);
 ```
 
 # 참고 자료
-[[참고자료#ES6 basic]]
+[[외부링크 모음#ES6 basic]]

@@ -110,4 +110,4 @@ res.writeHead(302, {Location: EncodingURI($redirection-target-url)}).end();
 [[웹 보안]] 참고
 
 # 참고 문서
-[[참고자료#nodeJS]]
+[[외부링크 모음#nodeJS]]

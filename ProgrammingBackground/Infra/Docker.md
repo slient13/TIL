@@ -61,4 +61,4 @@
 	- `docker exec -it $container /bin/sh` // `/bin/sh`에는 유저의 명령어 입력을 받는 프로그램인 [[shell]]이 존재하는데, 이를 실행하도록 한다. 이를 통해 사용자는 `docker exec $container`를 일일히 타이핑하지 않고서도 원하는 명령 동작을 실행할 수 있다. (*참고: 만약 `-it` 옵션을 빠뜨린다면 [[shell]]은 키자마자 즉시 꺼진다.*)
 
 # 참고
-[[참고자료#docker]]
+[[외부링크 모음#docker]]
