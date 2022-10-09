@@ -12,7 +12,8 @@
 
 또한 마찬가지로 프로세스를 감시하고 있다가 원본 파일이 수정되면 빠르게 다시 시작해주는데, 이를 통해 개발할 때 수정 사항을 반영하기 위해 서버를 잠시 껐다 키는 수고를 덜 수 있다.
 
-*참고: [공식 홈페이지](https://pm2.keymetrics.io/)*
+*참고:*
+ref:: [공식 홈페이지](https://pm2.keymetrics.io/)
 
 ### 명령어
 - `pm2 start $file-name` // `file`을 `pm2`를 통해 실행한다. 이렇게 실행된 파일은 ==node.js== 서버와 유사하나 [[#pm2]]에서 모니터링 하며, 프로세스가 의도치 않게 종료되면 즉시 서비스를 다시 실행한다.
@@ -52,7 +53,7 @@
 - `option` // 파일 입력 시 관련된 설정들이다.
 	- `encoding = utf8` // 파일 인코딩 방식이다.
 	- `mode = 0o666` // 파일의 접근 권한이다. 기본값의 의미는 ==rw-rw-rw-==이다.
-	- `flag = 'w'` // 파일 열람 시 모드를 지정한다. 기본값의 의미는 ==새로 작성하되, 기존에 같은 이름을 가진 파일이 있다면 덮어써라==이다. 자세한 것은 다음 링크 참고. [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#file-system-flags)
+	- `flag = 'w'` // 파일 열람 시 모드를 지정한다. 기본값의 의미는 ==새로 작성하되, 기존에 같은 이름을 가진 파일이 있다면 덮어써라==이다. 자세한 것은 다음 링크 참고. (ref::file-system-flags:[File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#file-system-flags))
 	- `signal` // 정확히는 모르겠으나 설명대로면 파일 작성 도중 중단하는 것을 허용하는지 여부를 지정할 수 있는 입력값으로 추정된다.
 - `callback: (err) => void` // 파일 작성이 완료되고 난 뒤 동작을 지정한다. 오류가 발생하면 `err` 객체에 정보가 담겨나오며, 이를 활용하여 예외처리를 할 수 있다.
 
@@ -76,7 +77,7 @@
 - `callback: (err) => void` // 파일 삭제 이후 수행될 코드
 
 ### 전체 참고
-- [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#fswritefilefile-data-options-callback)
+- ref:: fswritefilefile-data-options-callback: [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#fswritefilefile-data-options-callback)
 
 
 ## 데이터 수신
@@ -112,10 +113,10 @@ res.writeHead(302, {Location: EncodingURI($redirection-target-url)}).end();
 # 참고 문서
 - ref:: 유튜브 강의: [WEB2 - Node.js - YouTube](https://www.youtube.com/playlist?list=PLuHgQVnccGMA9QQX5wqj6ThK7t2tsGxjm)
 - ref:: 공식 참고 문서: [Index | Node.js v16.17.0 Documentation (nodejs.org)](https://nodejs.org/dist/latest-v16.x/docs/api/)
-- ref:: fileHandler.readFile(): [File system | Node.js v16.17.0 Documentation (nodejs.org)](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#filehandlereadfileoptions)
-- ref:: fs.writeFile(): [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#fswritefilefile-data-options-callback)
-- ref:: fileSytem flag: [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#file-system-flags)
+- ref:: filehandlereadfileoptions: [File system | Node.js v16.17.0 Documentation (nodejs.org)](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#filehandlereadfileoptions)
+- ref:: fswritefilefile-data-options-callback: [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#fswritefilefile-data-options-callback)
+- ref:: file-system-flags: [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#file-system-flags)
 - ref:: [HTTP 트랜잭션 해부 | Node.js (nodejs.org)](https://nodejs.org/ko/docs/guides/anatomy-of-an-http-transaction/)
-- ref:: [[개념 정리] http content-type 관한 정리 (tistory.com)](https://yunzema.tistory.com/186)
+- ref:: [개념 정리 - http content-type 관한 정리 (tistory.com)](https://yunzema.tistory.com/186)
 - ref:: [URLSearchParams - Web API | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/API/URLSearchParams)
 - ref:: 문자참조표: [HTML 문자참조표 (creativestudio.kr)](https://creativestudio.kr/2106)
