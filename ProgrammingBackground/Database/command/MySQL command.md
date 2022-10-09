@@ -23,7 +23,9 @@ CREATE TABLE $tableName (
 테이블을 생성하는 명령어
 - `$type` // [[MySQL dataType]] 참고
 - `$constraint` // [[MySQL constraint]] 참고
-- 자세한 정보 참고: [MySQL :: MySQL 8.0 Reference Manual :: 13.1.20 CREATE TABLE Statement](https://dev.mysql.com/doc/refman/8.0/en/create-table.html)
+
+*참고*
+ref:: [MySQL 8.0 Reference Manual - 13.1.20 CREATE TABLE Statement](https://dev.mysql.com/doc/refman/8.0/en/create-table.html)
 
 ```mysql
 CREATE TABLE $table_name
@@ -48,7 +50,8 @@ $action
 - `$action = MODIFY $col $col_type $constraint` // `$table`의 속성 중 `$col`의 정의를 변경한다.
 - `$action = DROP $col` // `$table`에서 `$col`을 제거한다.
 
-*참고*: [SQL ALTER TABLE Statement (w3schools.com)](https://www.w3schools.com/sql/sql_alter.asp)
+*참고*
+ref:: [SQL ALTER TABLE Statement (w3schools.com)](https://www.w3schools.com/sql/sql_alter.asp)
 
 #### 삭제
 - `DROP TABLE $table-name;` // `$table`을 제거한다.
@@ -74,7 +77,8 @@ SELECT $col [AS $name], ...
 - `ORDER BY` // 결과물을 특정 속성을 기준으로 정렬하여 출력한다. 정렬 방향의 기본값은 `AES`, 즉 오름차순이다.
 - `LIMIT` // 출력되는 결과물의 개수를 `$limitCount`로 제한한다.
 
-*참고*: [SQL SELECT Statement (w3schools.com)](https://www.w3schools.com/sql/sql_select.asp)
+*참고*
+ref::[SQL SELECT Statement (w3schools.com)](https://www.w3schools.com/sql/sql_select.asp)
 
 ### 삽입
 - `INSERT INTO $table-name ($col, ...) values ($value, ...) ` // `$table`에 `$col`에 맞춰 `$value`를 대응해 새로운 [[MySQL#record]]를 추가한다. 생략된 `$col`에는 `null`값이 들어가며, 만약 해당 column이 `NOT NULL` 제약 조건을 가진 경우 오류가 발생하고 추가되지 않는다.
@@ -97,7 +101,8 @@ $value: $expr | DEFAULT
 `$table`의 모든 [[MySQL#record]]에 대해 `$col`의 값을 `$value`로 변경한다.
 - `WHERE` 변경 대상을 필터링한다.
 
-*참고*: [SQL UPDATE Statement (w3schools.com)](https://www.w3schools.com/sql/sql_update.asp)
+*참고*
+ref::[SQL UPDATE Statement (w3schools.com)](https://www.w3schools.com/sql/sql_update.asp)
 
 ```mysql
 UPDATE $target_table, $subquery as $alter_name
@@ -107,7 +112,8 @@ WHERE $condition
 
 위와 같은 방법으로 subquery를 이용해 일괄적인 업데이트를 진행할 수 있다.
 
-*참고*: [Mysql, Select결과를 Update 문에 반영하기 - 겨울팥죽 여름빙수 (tistory.com)](https://shakddoo.tistory.com/entry/Mysql-Select%EA%B2%B0%EA%B3%BC%EB%A5%BC-Update-%EB%AC%B8%EC%97%90-%EB%B0%98%EC%98%81%ED%95%98%EA%B8%B0)
+*참고*
+ref::[Mysql, Select결과를 Update 문에 반영하기 - 겨울팥죽 여름빙수 (tistory.com)](https://shakddoo.tistory.com/entry/Mysql-Select%EA%B2%B0%EA%B3%BC%EB%A5%BC-Update-%EB%AC%B8%EC%97%90-%EB%B0%98%EC%98%81%ED%95%98%EA%B8%B0)
 
 ### 삭제
 ``` sql

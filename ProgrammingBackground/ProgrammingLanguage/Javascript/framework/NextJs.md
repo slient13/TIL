@@ -6,7 +6,8 @@
 [[react]] 기반인 만큼 [[react]]의 문법을 이용해 작성한다.
 
 # 시작
-*참고:* [Getting Started | Next.js (nextjs.org)](https://nextjs.org/docs)
+*참고:* 
+ref:: [Getting Started | Next.js (nextjs.org)](https://nextjs.org/docs)
 
 ## 설치
 초기 설정 과정 중 설치되어 있지 않다면 ==create-next-app@latest== 패키지를 설치할 것이냐고 물어볾으로 특별히 미리 해야 할 설치 과정은 없다.
@@ -32,7 +33,8 @@
 
 # API
 ## Page API
-*참고*: [Basic Features: Pages | Next.js (nextjs.org)](https://nextjs.org/docs/basic-features/pages)
+*참고*: 
+ref:: [Basic Features: Pages | Next.js (nextjs.org)](https://nextjs.org/docs/basic-features/pages)
 ### route
 사용자(client)가 도메인 주소로 접근하였을 때, 주소에 따라 적절한 `.js` 파일을 연결시켜주는 것. 다음과 같은 규칙을 따른다.
 
@@ -45,6 +47,9 @@
 ## environment variable
 환경 변수를 지정하는 기능이다. `process.env.$env-var`의 형태로 정의된 환경 변수에 접근할 수 있다.
 
-*참고*: [Basic Features: Environment Variables | Next.js (nextjs.org)](https://nextjs.org/docs/basic-features/environment-variables)
+*참고*: 
+ref:: [Basic Features: Environment Variables | Next.js (nextjs.org)](https://nextjs.org/docs/basic-features/environment-variables)
 
-# [[외부링크 모음#NextJs]]
+# 기타 참고 자료
+- ref:: 생활코딩 - 유튜브 강의: [Next.js - React, Express.js 그리고 SSR을 한방에 - YouTube](https://www.youtube.com/watch?v=ECMB4kUCKWQ)
+- ref:: [JSONPlaceholder - Free Fake REST API (typicode.com)](https://jsonplaceholder.typicode.com/)

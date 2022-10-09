@@ -9,4 +9,4 @@
 상대적인 수치로 증감하는 코드는 확인하지 못함. 대신 ==set 계열 함수==를 이용하여 마치 대입식으로 증가시키듯 현재 값에서 고정 수치만큼 증가시키도록 하면 될 듯
 
 # 참고 링크
-[[외부링크 모음#javascript Date 객체 format]]
+- ref:: [JavaScript Date Formats (w3schools.com)](https://www.w3schools.com/js/js_date_formats.asp)

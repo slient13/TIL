@@ -4,8 +4,8 @@
 유사한 서비스로 [[AWS/amplify]] 가 있다.
 
 # 서비스 구성
-제품소개::[Firebase Products (google.com)](https://firebase.google.com/products-build?hl=ko)
-요금제::[Firebase Pricing (google.com)](https://firebase.google.com/pricing?hl=ko)
+references::제품소개: [Firebase Products (google.com)](https://firebase.google.com/products-build?hl=ko)
+references::요금제: [Firebase Pricing (google.com)](https://firebase.google.com/pricing?hl=ko)
 
 ## 웹 서비스
 ### Cloud Firestore
@@ -72,11 +72,10 @@ iOS 혹은 Android 환경에서 앱을 배포하고자 할 때 필요한 다양�
 5. 앱 생성 이후 안내되는 방식으로 작업 환경에 firebase를 연결한다.
 
 # API
-API_참고문서::[Firebase API Reference (google.com)](https://firebase.google.com/docs/reference)
+references::API_참고문서: [Firebase API Reference (google.com)](https://firebase.google.com/docs/reference)
 
 ## 인증
-API_인증_참고문서::[Firebase 인증 (google.com)](https://firebase.google.com/docs/auth/)
-API_filebase.auth_참고문서::[auth | JavaScript SDK  |  Node.js (client) API reference  |  Firebase (google.com)](https://firebase.google.com/docs/reference/node/firebase.auth)
+references::Firebase_Build_Authociation: [Firebase 인증 (google.com)](https://firebase.google.com/docs/auth)
 
 ### 인증 수단 추가
 **firebase console**에서 **Authociation > Sign-in Method** 텝을 들어가면 다양한 인증 수단을 선택할 수 있다. 
@@ -84,3 +83,56 @@ API_filebase.auth_참고문서::[auth | JavaScript SDK  |  Node.js (client) AP
 다양한 인증 수단을 간단하게 제공할 수 있지만 일부 인증 수단의 경우(github 등) 약간의 추가적인 조치가 필요할 수 있다.
 
 **참고: github 인증을 추가하는 방법**: `github > Profile Setting > Developer Settings > OAuth Apps`을 통해 새로운 github app을 추가해주면 된다. 이 때 *homepageURL*은 개발자가 구축한 서버의 URL(실습에서는 *승인 콜백 URL*의 일부, `.com` 까지만 잘라 사용)을 넣어주면 되고, *Authorization callback URL*은 말 그대로 **firebase console**에서 제공해준 *승인 콜백 URL*을 집어넣어주면 된다.
+
+### 인증용 코드 추가
+#### 웹
+
+*초기 설정*
+```js
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
+const firebaseConfig = { 
+  ...
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+const firebaseAuth = getAuth(firebaseApp);
+```
+
+*이메일을 통한 신규 계정 등록 및 로그인*
+```js
+import { 
+	createUserWithEmailAndPassword, 
+	signInWithEmailAndPassword 
+} from "firebase/auth";
+
+// 신규 계정 등록
+createUserWithEmailAndPassword(
+	firebaseAuth, 
+	email: string, 
+	password: string
+)
+
+// 이메일을 통한 로그인
+signInWithEmailAndPassword(
+	firebaseAuth, 
+	email: string, 
+	password: string
+)
+```
+
+*인증 정보 유지 단위*
+references::Firebase.인증상태지속성: [인증 상태 지속성  |  Firebase (google.com)](https://firebase.google.com/docs/auth/web/auth-state-persistence)
+```js
+firebase.auth.Auth.Persistence.LOCAL
+// 로컬 환경에서 인증상태 유지. 명시적으로 로그아웃 하지 않는 이상 브라우저가 종료되거나 React Native 활동이 종료되어도 인증 상태가 유지됨.
+// 기본값임.
+
+firebase.auth.Auth.Persistence.SESSION
+// 세션 단위 혹은 탭 단위로 인증 상태 유지.
+
+firebase.auth.Auth.Persistence.NONE
+// 인증 정보를 기억하지 않음. 오로지 메모리에만 저장되며, 창이나 활동이 새로고침되는 등 메모리가 초기화되면 인증 상태도 초기화됨.
+
+```

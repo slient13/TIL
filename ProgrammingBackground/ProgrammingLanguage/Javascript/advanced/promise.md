@@ -75,4 +75,4 @@ promise
 ```
 
 # 참고 자료 
-[[외부링크 모음#promise]]
+- ref:: MDN 참고 문서 - promise: [Promise - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)

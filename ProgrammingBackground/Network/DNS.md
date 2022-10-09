@@ -105,4 +105,4 @@
 4. 결과적으로 ==외부 접근자==는 ==호스팅 서비스==를 경유하여 ==서비스 사용자==가 제작한 결과물에 도달할 수 있게 된다.
 
 # 참고
-[[외부링크 모음#DNS]]
+- ref::생활코딩 - DNS 강의: [WEB2-Domain Name System - YouTube](https://www.youtube.com/playlist?list=PLuHgQVnccGMCI75J-rC8yZSVGZq3gYsFp)

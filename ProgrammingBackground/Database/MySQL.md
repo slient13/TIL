@@ -9,7 +9,7 @@
 ## 일반적인 설치
 공식 다운로드 페이지에서 *mysql community server*를 골라 installer를 내려받고 실행한다.
 
-다운로드 링크: [MySQL :: MySQL Community Downloads](https://dev.mysql.com/downloads/)
+references:: MySQL 커뮤니티 버전 설치 페이지: [MySQL - MySQL Community Downloads](https://dev.mysql.com/downloads/)
 
 ### 기타
 기본 설정 포트: 3306
@@ -22,14 +22,17 @@
 해당 패키지를 직접 설치하는 대신, [[Docker#image]]로 내려받아 컨테이너를 설정할 수도 있다.
 
 *참고*
-- 설치 페이지: [Install WAMP, Download WAMP (bitnami.com)](https://bitnami.com/stack/wamp/installer)
-- 설치 설명글: [Bitnami WAMP 설치 (Apache, Mysql, Php 설치하기) (tistory.com)](https://aboneu.tistory.com/243)
-- docker image = nanoserver/wamp: [nanoserver/wamp - Docker Image | Docker Hub](https://hub.docker.com/r/nanoserver/wamp)
+references:: Bitnami/WAMP 설치 페이지: [Install WAMP, Download WAMP (bitnami.com)](https://bitnami.com/stack/wamp/installer)
+references:: Bitnami/WAMP 설치 과정 설명/블로그 글: [Bitnami WAMP 설치 (Apache, Mysql, Php 설치하기) (tistory.com)](https://aboneu.tistory.com/243)
+references:: docker image = nanoserver/wamp: [nanoserver/wamp - Docker Image | Docker Hub](https://hub.docker.com/r/nanoserver/wamp)
 
 ## IaaS
 온라인 상에서 [[MySQL]]을 포함한 개발 환경을 대여하여 사용할 수 있다. 
 
-예시로 [codeanywhere](https://codeanywhere.com/?ref=try-now&gclid=CjwKCAjwyaWZBhBGEiwACslQo8bFxa48vwnZnRTsjPKkVIOloeLCndYr9hb2qGFwSVCeuzh50TfPqBoCY4sQAvD_BwE) 가 있다.
+예시로 **CodeAnywhere** 가 있다.
+
+*참고*
+references:: codeanywhere: [codeanywhere](https://codeanywhere.com/?ref=try-now&gclid=CjwKCAjwyaWZBhBGEiwACslQo8bFxa48vwnZnRTsjPKkVIOloeLCndYr9hb2qGFwSVCeuzh50TfPqBoCY4sQAvD_BwE)
 
 # 구성
 ## database server

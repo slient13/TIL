@@ -100,8 +100,8 @@ Windows 10 이상의 버전에서는 개발자들이 특별히 리눅스 환경�
 - `tab`: 자동 완성(만약 일치하는 대상이 복수개라면 그 목록을 출력한다)
 	
 # 참고 자료
-[얄팍한 코딩 사전 - 가장 쉬운 리눅스 강좌 영상](https://www.youtube.com/watch?v=tPWBF13JIVk&list=PLpO7kx5DnyIExYt0jkyWWjx8XNA2Fx2rI&index=12)
-[얄팍한 코딩 사전 - 가장 쉬운 리눅스 강의 자료](https://www.yalco.kr/35_linux/)
-[생활코딩 30분 요약 강좌 - 리눅스](https://paullabworkspace.notion.site/Linux-22-1-c569da2147d9496cbae6801b086cef82)
-[Linux zip/unzip으로 압축하기](https://www.lesstif.com/lpt/linux-zip-unzip-80248839.html)
-[파일시스템 계층구조 표준](https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9D%BC%EC%8B%9C%EC%8A%A4%ED%85%9C_%EA%B3%84%EC%B8%B5%EA%B5%AC%EC%A1%B0_%ED%91%9C%EC%A4%80) 
+- ref:: [얄팍한 코딩 사전 - 가장 쉬운 리눅스 강좌 영상](https://www.youtube.com/watch?v=tPWBF13JIVk&list=PLpO7kx5DnyIExYt0jkyWWjx8XNA2Fx2rI&index=12)
+- ref:: [얄팍한 코딩 사전 - 가장 쉬운 리눅스 강의 자료](https://www.yalco.kr/35_linux/)
+- ref:: [생활코딩 30분 요약 강좌 - 리눅스](https://paullabworkspace.notion.site/Linux-22-1-c569da2147d9496cbae6801b086cef82)
+- ref:: [Linux zip/unzip으로 압축하기](https://www.lesstif.com/lpt/linux-zip-unzip-80248839.html)
+- ref:: [파일시스템 계층구조 표준](https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9D%BC%EC%8B%9C%EC%8A%A4%ED%85%9C_%EA%B3%84%EC%B8%B5%EA%B5%AC%EC%A1%B0_%ED%91%9C%EC%A4%80) 

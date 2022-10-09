@@ -82,4 +82,4 @@ console.log(proxy.age);
 ```
 
 # 참고 자료
-[[외부링크 모음#ES6 basic]]
+- ref:: [Javascript es6 bonus](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-es6-%EB%B3%B4%EB%84%88%EC%8A%A4/dashboard)

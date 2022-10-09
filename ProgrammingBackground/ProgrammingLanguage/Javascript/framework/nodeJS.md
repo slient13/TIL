@@ -110,4 +110,12 @@ res.writeHead(302, {Location: EncodingURI($redirection-target-url)}).end();
 [[웹 보안]] 참고
 
 # 참고 문서
-[[외부링크 모음#nodeJS]]
+- ref:: 유튜브 강의: [WEB2 - Node.js - YouTube](https://www.youtube.com/playlist?list=PLuHgQVnccGMA9QQX5wqj6ThK7t2tsGxjm)
+- ref:: 공식 참고 문서: [Index | Node.js v16.17.0 Documentation (nodejs.org)](https://nodejs.org/dist/latest-v16.x/docs/api/)
+- ref:: fileHandler.readFile(): [File system | Node.js v16.17.0 Documentation (nodejs.org)](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#filehandlereadfileoptions)
+- ref:: fs.writeFile(): [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#fswritefilefile-data-options-callback)
+- ref:: fileSytem flag: [File system | Node.js v18.9.0 Documentation (nodejs.org)](https://nodejs.org/api/fs.html#file-system-flags)
+- ref:: [HTTP 트랜잭션 해부 | Node.js (nodejs.org)](https://nodejs.org/ko/docs/guides/anatomy-of-an-http-transaction/)
+- ref:: [[개념 정리] http content-type 관한 정리 (tistory.com)](https://yunzema.tistory.com/186)
+- ref:: [URLSearchParams - Web API | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/API/URLSearchParams)
+- ref:: 문자참조표: [HTML 문자참조표 (creativestudio.kr)](https://creativestudio.kr/2106)

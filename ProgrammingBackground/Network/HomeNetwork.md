@@ -1,7 +1,7 @@
 #network
 
 # 참고 자료
-[참고 강의::[WEB2-Home server - YouTube](https://www.youtube.com/playlist?list=PLuHgQVnccGMA52uRBmSwqcvtI5IMoFclJ)]
+[강의_영상::[WEB2-Home server - YouTube](https://www.youtube.com/playlist?list=PLuHgQVnccGMA52uRBmSwqcvtI5IMoFclJ)]
 
 # IP address
 [[ip]] 참고
