@@ -1,3 +1,5 @@
+역링크: `$= dv.current().file.inlinks.filter((e) => e.path.substring(0, 5) !== "__TIL")`
+
 # 개요
 [[javascript]]의 특수한 객체로, 값이 언제 제공될지 알 수 없는 비동기 환경에서 확실히 완료된 시점에 다음 동작을 연결시켜주는 기능을 한다.
 

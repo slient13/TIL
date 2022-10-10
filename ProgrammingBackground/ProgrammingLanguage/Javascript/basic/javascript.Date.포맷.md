@@ -1,4 +1,4 @@
-#javascript/Object/Date
+역링크: `$= dv.current().file.inlinks.filter((e) => e.path.substring(0, 5) !== "__TIL")`
 
 # 개요
 ==javascript==에서 날짜 및 시간을 표현하는데 사용하는 ==Date== 객체의 입력 및 출력 포맷

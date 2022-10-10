@@ -1,3 +1,5 @@
+역링크: `$= dv.current().file.inlinks.filter((e) => e.path.substring(0, 5) !== "__TIL")`
+
 # 변수 선언
 ## var
 javascript에서 최초로 제공된 변수 정의 방식이다. 일반적인 변수처럼 ==재할당==이 가능하며, 특이하게도 ==재선언==이 가능하다. 때문에 앞에서 관련된 값을 사용하고 있었다면 덮어쓸 위험이 있어 근래에는 대신 [[#let]]을 사용한다.
@@ -29,3 +31,16 @@ javascript가 발전해감에 따라 새롭게 나온 변수 선언 방법. [[#v
 - 블록 스코프 범위 사용 여부 = true
 - 재선언 가능 여부 = false
 - 재할당 가능 여부 = false
+
+# 스코프 범위
+[[javascript.basic.scope]]
+
+# 비동기
+[[javascript.basic.asyncronize]]
+
+# 객체
+## Date
+[[javascript.Date.포맷]]
+
+# 브라우저
+[[javascript.browser]]

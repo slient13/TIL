@@ -14,17 +14,14 @@ dv.list(dv.pages()
 	.file.link);
 ```
 
-```dataviewjs
-dv.span(dv.current().file.mtime)
-```
-
 # recently edited
 ```dataviewjs
 dv.table(
-	["link", "lastModifiedTime"],
+	["index", "link", "lastModifiedTime"],
 	dv.pages()
 	.map(p => [p.file.link, p.file.mtime])
 	.sort(e => e[1], "desc")
+	.map((e, i) => [i+1, e[0], e[1]])
 	.limit(15)
 );
 ```

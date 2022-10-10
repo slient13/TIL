@@ -1,3 +1,5 @@
+역링크: `$= dv.current().file.inlinks.filter((e) => e.path.substring(0, 5) !== "__TIL")`
+
 # scope
 ## scope 종류
 *참고* // [[#scope chain]]에 의해 순회할 때는 깊은 곳에서 얕은 곳으로, 즉 `block -> local -> closure -> ... -> scope -> global` 순서로 이루어진다.
