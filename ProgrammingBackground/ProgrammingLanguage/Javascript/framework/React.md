@@ -32,9 +32,11 @@ useEffect($callback)
 update가 완전히 종료되기 전 새로운 변경사항이 반영되는 경우 효율을 위해 이전 update는 중단하고 새로운 update를 실행한다.
 
 ```js
-useEffect($callback, [$dependency, ...])
+useEffect($callback, $dependencies)
 ```
-위와 같이 작성하면 `useEffect`는 오직 `$dependency, ...`로 지정해준 값이 변경되었을 때만 갱신한다.
+위와 같이 작성하면 `useEffect`는 오직 `$dependencies`로 지정해준 값들이 변경되었을 때만 갱신한다.
+
+만약 `$dependencies`를 빈 배열, 즉 `[]`로 제공해주었다면 어떠한 값 변화도 반응하지 않게 된다. 때문에 같이 제공된 `$callback`은 첫 렌더링 시에만 1회 실행되고 이후 재 렌더링 시에는 무시되게 된다. 이를 이용해 이벤트 리스너등을 설정하는 코드로 활용할 수 있다.
 
 참고: (ref::hooks#useEffect: [Hooks API Reference – React (reactjs.org)](https://ko.reactjs.org/docs/hooks-reference.html#useeffect))
 
