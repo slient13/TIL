@@ -37,3 +37,10 @@ NoSQL 기반의 데이터베이스 서버를 제공해준다. 규칙은 많지 �
 일반적으로 `getDocs($Collection)`을 이용한다. 해당 코드를 실행하면 `querySnapshot`이라는 데이터를 반환하는데, 여기에는 데이터를 포함하여 기타 유용한 정보가 함께 포함되어 있다.
 
 `getDoc`은 해당 데이터베이스의 모든 데이터를 조회해 제공한다. 하지만 이는 비효율적이므로 백엔드측에서 미리 query를 수행하고 그 결과를 반환해주기를 바랄 수도 있다. 이 때 사용할 수 있는 것이 `query(...)`이다. 자세한 내용은 다음 참고. (ref::[Cloud Firestore에서 단순 쿼리 및 복합 쿼리 실행  |  Firebase (google.com)](https://firebase.google.com/docs/firestore/query-data/queries))
+
+### 데이터 삭제
+*참고*: (ref::firebase/firestore/API#deleteDoc: [@firebase/firestore  |  Firebase JavaScript API reference (google.com)](https://firebase.google.com/docs/reference/js/firestore_?hl=en#deletedoc))
+
+`deleteDoc($DocumentReference)`를 이용한다. 저 코드를 실행 시 해당 document가 삭제된다. 단, 상위 컬렉션의 문서를 제거하였다고 하위 컬렉션이 같이 제거되지는 않는다.
+
+컬렉션을 삭제하는 방법은 웹 환경에서는 제공되지 않는다. 이유는 그러한 행위가 권장되지 않기 때문. 그렇기에 웹 환경에서는 **Firebase Console**을 이용해야 한다.

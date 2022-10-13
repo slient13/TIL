@@ -34,7 +34,7 @@ references::API_참고문서: [Firebase API Reference (google.com)](https://fire
 [[Firebase.Database]]
 
 ## 로컬 애뮬레이터 도구 모음
-[[Firebase.LocalAmulatorSuite]]
+[[Firebase.LocalEmulatorSuite]]
 
 # 기타
 ref::실습내용 github 저장소: [slient13/practice-cloneCoding-tweeterclone: Programming practice by clone coding with normad coder's lectures. (github.com)](https://github.com/slient13/practice-cloneCoding-tweeterclone)
