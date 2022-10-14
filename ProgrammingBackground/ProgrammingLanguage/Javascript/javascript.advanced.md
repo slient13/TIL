@@ -6,3 +6,4 @@
 - [[promise]]
 - [[async]]
 - [[Ajax]]
+- [[Blob]]

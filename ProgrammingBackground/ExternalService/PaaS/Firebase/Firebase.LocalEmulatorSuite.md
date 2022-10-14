@@ -1,4 +1,3 @@
-#inProcess 
 *역링크*: `$= dv.current().file.inlinks.filter((e) => e.path.substring(0, 5) !== "__TIL").filter((e) => e.path !== dv.current().file.link.path)`
 
 # 개요
@@ -18,7 +17,7 @@ Firebase를 이용한 서비스 개발 과정에서 불필요한 비용이나 �
 # 연결
 애뮬레이터를 실행했다고 바로 앱의 모든 기능이 연결되지는 않는다. 연결을 위해서는 프로젝트 파일에 약간의 조치가 필요하다.
 
-## 인증
+## Authociation
 ## Firestore
 ```js
 // eslint-disable-next-line no-restricted-globals
@@ -38,3 +37,15 @@ else {
 그 외 **Firebase Console**에서 데이터베이스를 직접 조작할 수 있었듯, **Emulator UI**를 이용해서 로컬 에뮬레이터의 데이터베이스를 수정할 수도 있다.
 
 **주의**: 테스트에 사용한 정보들은 휘발성으로, **Local Emulator**가 종료되면 전부 초기화된다. 덕분에 매 테스트마다 초기화 작업을 해줄 필요가 없다는 장점은 있지만, 기능 실험용 테스트 데이터를 구성해야 한다면 별도로 외부에 목업 데이터를 저장해두었다가 로드하는 과정이 필요하다.
+
+## Storage
+```js
+import { getStorage, connectStorageEmulator } from "firebase/storage";  
+  
+const storage = getStorage();  
+connectStorageEmulator(storage, "localhost", 9199);
+```
+
+위 코드를 작성하면 storage에 대한 코드가 본 서비스가 아닌 로컬 에뮬레이터로 연결되도록 할 수 있다. 
+
+참고: (ref:: [Connect your app to the Cloud Storage for Firebase Emulator  |  Firebase Local Emulator Suite (google.com)](https://firebase.google.com/docs/emulator-suite/connect_storage#web-v9))

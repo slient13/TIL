@@ -27,13 +27,16 @@
 # 개발
 references::API_참고문서: [Firebase API Reference (google.com)](https://firebase.google.com/docs/reference)
 
-## 인증
+## Authociation
 [[Firebase.Authociation]]
 
-## database
+## Database
 [[Firebase.Database]]
 
-## 로컬 애뮬레이터 도구 모음
+## Storage 
+[[Filebase.Storage]]
+
+## Local Emulator Suite
 [[Firebase.LocalEmulatorSuite]]
 
 # 기타
