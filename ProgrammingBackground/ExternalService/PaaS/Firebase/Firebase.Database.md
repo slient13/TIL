@@ -44,3 +44,19 @@ NoSQL 기반의 데이터베이스 서버를 제공해준다. 규칙은 많지 �
 `deleteDoc($DocumentReference)`를 이용한다. 저 코드를 실행 시 해당 document가 삭제된다. 단, 상위 컬렉션의 문서를 제거하였다고 하위 컬렉션이 같이 제거되지는 않는다.
 
 컬렉션을 삭제하는 방법은 웹 환경에서는 제공되지 않는다. 이유는 그러한 행위가 권장되지 않기 때문. 그렇기에 웹 환경에서는 **Firebase Console**을 이용해야 한다.
+
+### 변화 감지
+**참고**: (ref:: firebase/firestore/API#onSnapshot: [@firebase/firestore  |  Firebase JavaScript API reference (google.com)](https://firebase.google.com/docs/reference/js/firestore_?hl=en#onsnapshot_8))
+
+```js
+const $listenerRef = onSnapshot(
+	$documentRef, 
+	$onNextcallback,
+	$onErrorCallback,
+	$onCompleteCallback	
+)
+
+$listenerRef() // to unmount listener
+```
+
+지정한 DB에 변화가 생겼을 때 이벤트를 발생시킨다. DB 변화에 따른 실시간 반영 등에 사용할 수 있다. 만약 컴포넌트가 제거되거나 하여 이벤트 리스너를 분리해야 한다면 `onSnapshot` 함수의 반환값으로 제공되는 참조자를 받아놨다 분리하고 싶은 시점에 호출하면 된다.

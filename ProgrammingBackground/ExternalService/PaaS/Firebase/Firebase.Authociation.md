@@ -100,3 +100,21 @@ useEffect(() => {
 
 ### redirect 방식
 인증용 페이지로 화면이 전환된다.
+
+# 인증 정보 활용
+## User
+사용자의 정보를 담고 있는 객체이다. `Auth.currentUser` 등을 통해 얻을 수 있다.
+
+**참고**: (ref:: [User | JavaScript SDK  |  Firebase JavaScript API reference (google.com)](https://firebase.google.com/docs/reference/js/v8/firebase.User))
+
+### 속성
+- `displayName` // 해당 **user**의 표시용 이름, 즉 닉네임을 의미한다.
+- `email` // 이메일을 의미한다.
+- `emailVerified` // `email`에 대해 인증 절차가 완료되었는지 여부를 반환한다.
+- `phoneNumber` // 전화번호를 의미한다. 
+- `photoURL` // 프로필 사진의 주소를 의미한다.
+- `uid` // **uniquey ID**를 의미한다. **displayNme**과 달리 어떠한 유저와도 중복될 수 없다.
+
+### 메서드
+- `delete()` // 해당 **user**를 로그아웃 시키고 해당 유저 정보를 제거한다. (= 탈퇴)
+- `updateProfile({$displayName, $photoURL})` // 닉네임과 프로필 사진을 변경한다. 실행 시 **promise**를 반환한다.

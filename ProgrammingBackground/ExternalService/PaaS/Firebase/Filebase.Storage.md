@@ -84,3 +84,14 @@ getDownloadURL($ref)
 다운로드 링크가 제공될 뿐 데이터를 처리하기 위한 다른 정보가 같이 제공되지는 않으므로, 데이터 종류에 따라 적절한 처리 방법을 구현해야 한다.
 
 **참고**: (ref:: [Download files with Cloud Storage on Web  |  Firebase Storage (google.com)](https://firebase.google.com/docs/storage/web/download-files))
+
+## 파일 삭제
+```js
+deleteObject($ref)
+	.then(() => {...})
+	.catch((error) => {...})
+```
+
+`deleteObject` 함수를 이용해서 파일을 삭제할 수 있다. **promise**를 반환하므로, 이를 이용해서 삭제 성공 여부 및 성공/실패 시 후처리를 구현할 수 있다.
+
+**참고**: (ref:: [Delete files with Cloud Storage on Web  |  Firebase Storage (google.com)](https://firebase.google.com/docs/storage/web/delete-files))
