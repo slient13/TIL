@@ -36,6 +36,9 @@ references::API_참고문서: [Firebase API Reference (google.com)](https://fire
 ## Storage 
 [[Filebase.Storage]]
 
+## Hosting
+[[Firebase/Firebase.Hosting]]
+
 ## Local Emulator Suite
 [[Firebase.LocalEmulatorSuite]]
 
