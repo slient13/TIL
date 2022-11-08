@@ -7,7 +7,7 @@
 3. **dataview**의 설정에 가서 `dataviewjs`를 활성화 시킨다. 인라인 방식 코드 실행도 활성화 한다.
 4. 모든 컨텐츠가 정상적으로 동작하면 개인 환경이나 취향에 맞춰 **Obsidian**을 커스터마이징 하고 정보를 활용한다.
 
-# 구조 설명
+# 폴더 설명
 - **__TIL**: 일일 학습 기록이다.
 - **__etc**: 분류되지 않은 메타 문서나 임시 파일등이 들어있다.
 - **__manual**: 본 저장소를 이용하는데 도움이 되는 정보들이 모여있는 폴더이다.
@@ -16,5 +16,8 @@
 - **__template**: **Obsidian**에서 사용하는 템플릿 문서들을 모아둔 폴더이다.
 - **그 외**: 공부한 내용을 정리한 파일들이다.
 
+# 실습 내용 (저장소)
+- 트위터 클론 코딩(firebase, react): [slient13/practice-cloneCoding-tweeterclone: Programming practice by clone coding with normad coder's lectures. (github.com)](https://github.com/slient13/practice-cloneCoding-tweeterclone)
+- (nest.js): [slient13/nestjs_cloneCoding: nestjs clone coding with nomad coder's nestjs lectures. (github.com)](https://github.com/slient13/nestjs_cloneCoding)
 # 참고
 - [외부 링크 사이트맵(외부용)](/__reference/외부%20링크%20사이트맵(외부용).md)
