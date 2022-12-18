@@ -1,5 +1,5 @@
 # 개요
-**CSS in javascript**를 제공하는 라이브러리로, 일반 javascript에서도 쓰일 수는 있으나 주로 [React](React.md)와 함께 쓰인다.
+**CSS in javascript**를 제공하는 라이브러리로, 일반 javascript에서도 쓰일 수는 있으나 주로 [React](../library/React.md)와 함께 쓰인다.
 
 # 문법
 ## styled

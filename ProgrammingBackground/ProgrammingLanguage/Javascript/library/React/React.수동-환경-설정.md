@@ -4,7 +4,7 @@
 (ref:: [CRA 없이 React 개발환경 구축하기](https://velog.io/@kimeunseo/CRA-%EC%97%86%EC%9D%B4-React-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0))
 
 # webpack 세팅
-[webpack](../nodeJS/webpack.md) 참고
+[webpack](../../framework/nodeJS/webpack.md) 참고
 
 # babel 세팅
 ```
@@ -16,8 +16,8 @@ npm i -D @babel/core @babel/cli @babel/preset-env @babel/preset-react babel-load
  - **@babel/core**: *babel*의 동작을 구현한 코어 모듈.
  - **@babel/cli**: *babel*의 동작을 cli 환경에서 사용할 수 있도록 제공하는 모듈
  - **@babel/preset-env**: 이전 버전 브라우저에서의 호환을 자동으로 챙겨주는 프리셋 집합
- - **@babel/preset-react**: [React](../React.md)변환을 위한 프리셋 집합.
- - **babel-loader**: [webpack](../nodeJS/webpack.md)에서 *babel*을 로드하기 위한 로더.
+ - **@babel/preset-react**: [React](../../library/React.md)변환을 위한 프리셋 집합.
+ - **babel-loader**: [webpack](../../framework/nodeJS/webpack.md)에서 *babel*을 로드하기 위한 로더.
 
 ```js 
 // webpack.config.js 세팅

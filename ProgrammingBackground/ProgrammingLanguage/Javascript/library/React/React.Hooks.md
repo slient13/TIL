@@ -39,7 +39,9 @@ useEffect($callback -> $cleanUpCallback, $dependencies)
 
 `$callback`으로 제공되는 함수는 또 다른 콜백 함수를 반환할 수 있는데, 이 때 반환하는 콜백은 **clean up callback**이라 부르며, **Effect**가 갱신되거나, 컴포넌트가 제거되는 등의 변화가 발생하였을 때 이전 **Effect**의 영향을 *청소*하는데 사용될 수 있다. 가령 이벤트 리스너를 분리하는 코드 등을 포함시킬 수 있다.
 
-참고: (ref::hooks#useEffect: [Hooks API Reference – React (reactjs.org)](https://ko.reactjs.org/docs/hooks-reference.html#useeffect))
+참고: 
+- (ref::hooks#useEffect: [Hooks API Reference – React (reactjs.org)](https://ko.reactjs.org/docs/hooks-reference.html#useeffect))
+- (ref::[useEffect 완벽 가이드 — Overreacted](https://overreacted.io/ko/a-complete-guide-to-useeffect/))
 
 ### useMemo
 ```jsx
@@ -117,7 +119,7 @@ const UseComponent = () => {
 
 위의 절차가 완료되면 이제 앞서 감싸진 컴포넌트 및 그것의 하위 컴포넌트 어디서든 그 정보를 불러올 수 있는 환경이 제공되었다. **hooks**에서 해당 내용을 쓰고자 하는 경우에는 `useContext($ContextObject)`를 통해 value 값을 받아와 사용하면 된다.
 
-위와 같은 방법으로 편리함을 제공받을 수는 있지만 일종의 전역 변수를 두는 꼴이라 [결합도](../../../../ComputerScience/결합도.md)를 높이기 때문에 남용하면 컴포넌트의 재사용을 어렵게 할 수 있다. 권장하는 경우는 로그인한 유저의 정보나 테마 정보 등 앱 전체에 걸쳐 두루 쓰이고 컨텍스트 자체를 일반화 할 수 있는 경우들이다.
+위와 같은 방법으로 편리함을 제공받을 수는 있지만 일종의 전역 변수를 두는 꼴이라 [결합도](../../../../ComputerScience/Modulation/결합도.md)를 높이기 때문에 남용하면 컴포넌트의 재사용을 어렵게 할 수 있다. 권장하는 경우는 로그인한 유저의 정보나 테마 정보 등 앱 전체에 걸쳐 두루 쓰이고 컨텍스트 자체를 일반화 할 수 있는 경우들이다.
 
 참고로 `setState`와 마찬가지로 `value`에 할당해준 데이터의 값이 바뀐다면 해당 데이터를 이용하고 있는 하위 컴포넌트는 무조건 다시 렌더링된다. 이를 막을 방법은 없으므로, 불필요하게 많은 정보를 하나의 *context 객체*로 관리하는 것은 피해야 한다.
 

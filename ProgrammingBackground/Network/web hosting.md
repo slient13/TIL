@@ -11,7 +11,7 @@
 
 # 종류
 ## github page
-[[github]]는 [[git]]에 기반을 둔 유명한 온라인 저장소 사이트이다. 보통은 자신의 코드를 다른 사람들과 공유하는 용도로 사용하지만 [[web hosting]] 서비스도 제공한다. 그것이 [[#github page]]이다.
+[[github]]는 [[../WorkManagement/SCM/git]]에 기반을 둔 유명한 온라인 저장소 사이트이다. 보통은 자신의 코드를 다른 사람들과 공유하는 용도로 사용하지만 [[web hosting]] 서비스도 제공한다. 그것이 [[#github page]]이다.
 
 ### 호스팅 방법
 *github 저장소 접속 -> Settings.Pages -> `Sources` 설정하고 Save -> (Action으로 가서 진행상황 확인) -> Settings.Pages 에서 publish 된 주소로 접속 시도, 접속 가능 여부 확인*

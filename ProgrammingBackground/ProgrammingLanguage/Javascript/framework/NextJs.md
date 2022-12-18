@@ -3,7 +3,7 @@
 # 개요
 간단히 말하면 ==React + Express.js + React-Router-Dom + Server Side Rendering==. (실제로 내장하고 있다는 뜻은 아니고, 유사한 기능을 내장하고 있음을 의미)
 
-[[react]] 기반인 만큼 [[react]]의 문법을 이용해 작성한다.
+[[../library/React]] 기반인 만큼 [[../library/React]]의 문법을 이용해 작성한다.
 
 # 시작
 *참고:* 
