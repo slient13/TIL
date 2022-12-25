@@ -10,8 +10,7 @@
 # 구성
 ## store
 ```js
-const store = Redux.createStore($reducer);
-////
+const store = Redux.createStore($reducer); // deprecated
 const store = Redux.configureStore({ reducer: $reducer });
 ```
 

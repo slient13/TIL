@@ -7,3 +7,4 @@
 - [[async]]
 - [[Ajax]]
 - [[Blob]]
+- [Typescript](advanced/Typescript.md)

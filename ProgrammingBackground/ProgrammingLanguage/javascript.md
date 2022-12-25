@@ -10,7 +10,8 @@
 - [[javascript.advanced]]
 
 ## library
-[[javascript.library]]
+- [[javascript.library]]
 
 ## framework
-[[javascript.framework]]
+- [[javascript.framework]]
+
