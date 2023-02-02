@@ -1,7 +1,7 @@
 # 기타
 - `USE $database` // `$database`를 명령의 대상으로 변경한다.
 - `SHOW (DATABASE | SCHEMAS) [LIKE $pattern | where $expr]` // `database`의 목록을 출력한다. `$pattern`이나 `$expr`으로 출력 대상을 한정할 수 있다.
-- `SHOW TABLES` // 현재 사용중인 [[MySQL#database]]에 포함된 [[MySQL#table]]목록을 출력한다.
+- `SHOW TABLES` // 현재 사용중인 [[../DBMS/MySQL#database]]에 포함된 [[../DBMS/MySQL#table]]목록을 출력한다.
 
 # 명령어
 ## DDL
@@ -39,7 +39,7 @@ CREATE TABLE $table_name
 RENAME TABLE $before TO $after
 ```
 
-[[MySQL#table]]의 이름을 `$before`에서 `$after`로 변경한다.
+[[../DBMS/MySQL#table]]의 이름을 `$before`에서 `$after`로 변경한다.
 
 ```mysql
 ALTER TABLE $table_name
@@ -70,8 +70,8 @@ SELECT $col [AS $name], ...
 
 - `SELECT` // 가지고 올 행을 지정한다. `$col`은 표현식에 따라 단순히 행을 가지고 오는 것 이외에 행간 연산을 지정할 수도 있다.
 	- `AS $name` // 행의 이름을 `$name`으로 출력한다.
-- `FROM` // 질의 대상으로 하는 [[MySQL#table]]을 지정한다.
-- `WHERE` // 질의 대상의 [[MySQL#record]] 중 `$condition`에 적합한 것만 추출한다.
+- `FROM` // 질의 대상으로 하는 [[../DBMS/MySQL#table]]을 지정한다.
+- `WHERE` // 질의 대상의 [[../DBMS/MySQL#record]] 중 `$condition`에 적합한 것만 추출한다.
 - `GROUP BY` // 질의 대상을 특정 속성의 값을 대상으로 그룹화 한다. 지정되지 않은 속성의 값은 하나로 합쳐지며, `SELECT` 문에서 [[#그룹 함수]]로만 호출할 수 있다.
 - `HAVING` // `GROUP BY`로 묶이지 않은 속성들을 대상으로 필터링 조건을 지정한다. `WHERE`과 유사하지만 여기서는 [[#그룹 함수]]를 조건의 연산으로 사용한다.
 - `ORDER BY` // 결과물을 특정 속성을 기준으로 정렬하여 출력한다. 정렬 방향의 기본값은 `AES`, 즉 오름차순이다.
@@ -81,8 +81,8 @@ SELECT $col [AS $name], ...
 ref::[SQL SELECT Statement (w3schools.com)](https://www.w3schools.com/sql/sql_select.asp)
 
 ### 삽입
-- `INSERT INTO $table-name ($col, ...) values ($value, ...) ` // `$table`에 `$col`에 맞춰 `$value`를 대응해 새로운 [[MySQL#record]]를 추가한다. 생략된 `$col`에는 `null`값이 들어가며, 만약 해당 column이 `NOT NULL` 제약 조건을 가진 경우 오류가 발생하고 추가되지 않는다.
-- `INSERT INTO $table-name values ($value, ...)` // [[MySQL#table]]의 [[MySQL#column]] 순서에 따라 매칭해서 새로운 [[MySQL#record]]를 추가한다. 이 때는 모든 속성에 대응해서 값을 입력시켜주어야 한다.
+- `INSERT INTO $table-name ($col, ...) values ($value, ...) ` // `$table`에 `$col`에 맞춰 `$value`를 대응해 새로운 [[../DBMS/MySQL#record]]를 추가한다. 생략된 `$col`에는 `null`값이 들어가며, 만약 해당 column이 `NOT NULL` 제약 조건을 가진 경우 오류가 발생하고 추가되지 않는다.
+- `INSERT INTO $table-name values ($value, ...)` // [[../DBMS/MySQL#table]]의 [[../DBMS/MySQL#column]] 순서에 따라 매칭해서 새로운 [[../DBMS/MySQL#record]]를 추가한다. 이 때는 모든 속성에 대응해서 값을 입력시켜주어야 한다.
 - `INSERT INTO $table-name ($col, ...) $subquery` // `$subquery`의 결과물을 `$table`에 매칭하여 추가한다. 이 때 대응되는 column들의 이름은 동일해야 한다.
 
 ### 변경
@@ -98,7 +98,7 @@ $assignment: $col = $value
 $value: $expr | DEFAULT
 ```
 
-`$table`의 모든 [[MySQL#record]]에 대해 `$col`의 값을 `$value`로 변경한다.
+`$table`의 모든 [[../DBMS/MySQL#record]]에 대해 `$col`의 값을 `$value`로 변경한다.
 - `WHERE` 변경 대상을 필터링한다.
 
 *참고*
@@ -121,7 +121,7 @@ DELETE FROM $table_name
 	[WHERE $condition]
 ```
 
-`$table` 내 [[MySQL#record]]를 제거한다.
+`$table` 내 [[../DBMS/MySQL#record]]를 제거한다.
 - `WHERE` // 삭제 대상을 필터링한다. 만약 생략하면 `$table` 내 모든 원소를 제거한다. (*참고: 모든 원소가 삭제된다고 테이블 자체가 사라지는 것은 아니다. 테이블 삭제는 [[#table 관련#삭제]]를 참고할 것*)
 
 ## DCL
@@ -136,7 +136,7 @@ DELETE FROM $table_name
 두 개의 테이블을 특정 기준으로 결합하는 연산이다.
 
 ### left join
-두 개의 테이블을 결합할 때 매칭되지 않는 [[MySQL#record]]가 있다면 좌항의 것만 남긴다.
+두 개의 테이블을 결합할 때 매칭되지 않는 [[../DBMS/MySQL#record]]가 있다면 좌항의 것만 남긴다.
 
 ```mysql
 $table_L LEFT JOIN $table_R

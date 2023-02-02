@@ -1,5 +1,5 @@
 # 개요
-[[MySQL]]의 데이터 타입 목록을 정리한 문서이다.
+[[../DBMS/MySQL]]의 데이터 타입 목록을 정리한 문서이다.
 
 참고:: [MySQL - MySQL 8.0 Reference Manual - 11 Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html)*
 
