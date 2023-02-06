@@ -24,10 +24,8 @@ Java Annotation 이용
 Bean Configuration File에 직접 등록
 
 # 하위 문서
-- [Annotation](Spring/Annotation.md)
-
-# 참고
-[spring initializr](https://start.spring.io/): **Springboot** 초기 설정을 도와주는 웹 앱이다. 해당 웹앱에서 사용할 빌더의 종류, 언어 및 언어의 버전, 스프링부트 버전, metadata, 사용할 라이브러리 등을 작성하면 자동으로 해당 구성이 세팅된 프로젝트 파일이 다운받아진다. 이를 **IntelliJ** 등에서 `project import` 해서 사용하면 된다.
+- [Spring.initialSetting](Spring/Spring.initialSetting.md)
+- [Spring.Annotation](Spring/Spring.Annotation.md)
 
 ## 빌드 도구
 - Ant

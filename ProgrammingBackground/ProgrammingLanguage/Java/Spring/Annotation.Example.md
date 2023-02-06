@@ -1,5 +1,13 @@
-
-### ex.PathVariable
+## ex.SpringbootApplication
+```java
+@SpringBootApplication
+public class DemoApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+}
+```
+## ex.PathVariable
 ```java
 // 예시
 @GetMapping(value = "/variable1/{variable}")

@@ -15,9 +15,11 @@
 
 ## 스크립트 설정
 스크립트를 간단히 사용하기 위해 *package.json* 파일의 `scripts` 속성에 대해 필요한 스크립트를 지정한다. 가령 `"dev": "webpack --mode development"`를 추가하면. `npm run dev`라는 간단한 명령으로 `webpack --mode development` 라는 일련의 명령을 간단하게 수행할 수 있게 된다. 사용하는 스크립트 목록은 다음과 같다.
-- `"dev": "webpack --mode development"`
-- `"build: "webpack --mode production"`
-- `"start": "webpack-dev-server --mode development"`
+```
+"dev": "webpack --mode development",
+"build": "webpack --mode production",
+"start": "webpack-dev-server --mode development",
+```
 
 ## webpack 설정
 root 경로에 *webpack.config.js* 파일을 추가한다. 여기에 각종 설정을 추가한다.
@@ -98,6 +100,9 @@ module.exports = {
 }
 // 위는 아래와 같이 약식 표현으로 사용할 수 있다.
 {
+	test: /\.파일-확장자$/,
+	exclude: /\.제외-파일$/,
+	loader: '로더-명칭',
 }
 ```
 
@@ -120,4 +125,4 @@ module.exports = {
 
 
 # 참고
-(ref:: [10분 만에 웹팩 배우기](https://serzhul.io/JavaScript/learn-webpack-in-under-10minutes/))
+- ~~([10분 만에 웹팩 배우기](https://serzhul.io/JavaScript/learn-webpack-in-under-10minutes/))~~ 사이트 개편으로 원본 자료가 사라짐. (ref:: [개편된 사이트 링크](https://serzhul.io/))
