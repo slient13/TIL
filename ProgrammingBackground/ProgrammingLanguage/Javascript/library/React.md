@@ -1,4 +1,6 @@
 #framework #frontend 
+*역링크*: `$= dv.current().file.inlinks.filter((e) => e.path.substring(0, 5) !== "__TIL" && e.path.substring(0, 11) !== "__reference").filter((e) => e.path !== dv.current().file.link.path)`
+
 # 용어
 ## 컴포넌트
 React를 구성하는 기본적인 방법. `React.Component`를 상속받은 클래스로 구성하며, 클래스 내부에서 특정 메서드를 overriding 하면 React에서 관련된 기능을 수행해준다. 여러가지 메서드가 존재하며 그 중 `render()`의 경우 반드시 정의되어야만 한다.

@@ -1,3 +1,5 @@
+*역링크*: `$= dv.current().file.inlinks.filter((e) => e.path.substring(0, 5) !== "__TIL" && e.path.substring(0, 11) !== "__reference").filter((e) => e.path !== dv.current().file.link.path)`
+
 # 개요
 *javascript* 기반의 웹 프론트엔드 환경에서 사용할 수 있는 범용 상태 관리 라이브러리. 최초에는 [React](React.md)의 상태관리를 용이하게 하기 위해 만들어졌지만 점차 기능이 확장되면서 [React](React.md)를 벗어나 *바닐라 javascript*나 다른 프론트엔드 라이브러리에서도 사용할 수 있도록 기능이 일반화 되었다.
 

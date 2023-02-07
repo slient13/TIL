@@ -61,10 +61,17 @@ ReactDOM.createRoot(root).render(
 *참고: (ref:: [CRA없이 React, TypeScript 셋팅하기](https://chanyeong.com/blog/post/7))*
 
 ## 설치 
-`npm install --save-dev typescript @types/react @types/react-dom`
+```bash
+npm install --save-dev typescript @types/react @types/react-dom
+```
 - **typescript**: *typescript*를 사용할 수 있게 해줌
 - **@types/react**: *react*에서 사용할 수 있는 *typescript*용 타입 힌트들을 제공함.
 - **@types/react-dom**: *react-dom*에서 사용할 수 있는 *typescript*용 타입 힌트들을 제공함.
+
+```bash
+npm i -D @babel/preset-react @babel/preset-typescript
+```
+- React 개발 환경에서 typescript에 관한 intellisense를 이용할 수 있게 해줌.
 
 ## 설정
 `node_modules/.bin/tsc --init` 명령을 이용하여 `tsconfig.json` 파일을 생성한다. 생성 후 `target: es5`로 설정하여 변환 규격이 es5가 되도록 해준다.
