@@ -25,8 +25,9 @@ react 앱의 가장 기본이 되는 컴포넌트. `index.js`에 포함되어 �
 그 단계가 짧은 경우에는 특별히 곤란한 부분은 없지만 만약 10단계, 15단계 이렇게 무지막지하게 건너가야 하거나 하면 [[#props]]를 추적하거나 수정하는 과정이 매우 까다로워 지기 때문에 **Context API**나 **Redux** 같은 라이브러리를 사용한다.
 
 # 심화
-[[React/React.Hooks]]
-[React/수동-환경-설정](React/React.수동-환경-설정.md)
+- [[React/React.Hooks]]
+- 
+- [React/수동-환경-설정](React/React.수동-환경-설정.md)
 
 # react-dom
 ## 리다이렉트
