@@ -58,7 +58,7 @@ interface RouteObject {
 const params = useParams(); 
 ```
 
-*path*를 정의할 때 `:value` 형태로 작성했던 값들을 객체 형태로 반환한다. [구조분해](../../../../../CodingTest/background/javascript%20참고.md#구조분해) 방식으로 필요한 값만 빼낼 수도 있다.
+*path*를 정의할 때 `:value` 형태로 작성했던 값들을 객체 형태로 반환한다. 이 때 사용하는 이름은 `:` 뒤에 작성했던 것을 그대로 이용한다. [구조분해](../../../../../CodingTest/background/javascript%20참고.md#구조분해) 방식으로 필요한 값만 빼낼 수도 있다.
 
 ### useLocation
 ```jsx
@@ -68,3 +68,11 @@ const location = useLocation();
 *url*에 관한 정보를 받아온다.
 - `location.pathname`: 경로명을 받아온다.
 - `location.search`: `?` 뒤쪽으로 기술된 *query string*을 받아온다.
+
+### useSearchParams
+```jsx
+const [qs, setQs] = useSearchParams();
+```
+
+*url* 뒤쪽에 붙어오는 *query string*에 대해 쉽게 다룰 수 있도록 제공하는 객체를 반환한다.
+- `qs.get($key)`: *key* 값이 `$key`인 *query string*의 값을 반환한다.

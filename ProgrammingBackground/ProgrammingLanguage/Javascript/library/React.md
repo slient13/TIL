@@ -26,7 +26,8 @@ react 앱의 가장 기본이 되는 컴포넌트. `index.js`에 포함되어 �
 
 # 심화
 - [[React/React.Hooks]]
-- 
+- [React.Router](React/React.Router.md)
+- [React.Context](React/React.Context.md)
 - [React/수동-환경-설정](React/React.수동-환경-설정.md)
 
 # react-dom
