@@ -33,6 +33,15 @@ const attrDefObjVar: {
 	paramBool: true,
 }
 
+// key type defined object
+const keyTypeDefVar: {
+	[key: string]: int
+} = {
+	'param_A': 123,
+	'param_B': 123,
+	'param_C': 123,
+}
+
 // Object
 // All of type in javascript are extended from Object, so every data can be assigned to `Object` type.
 const ObjVar: Object;
