@@ -49,14 +49,21 @@ module.exports = {
 ```less
 @width: 10px;
 @height: @width + 10px;
+@prefix: pfix
 
-#header {
+.header {
   width: @width;
   height: @height;
+}
+
+.@{prefix}-something { // pfix-something 이랑 같음.
+	...
 }
 ```
 
 `@variable: value` 형태로 작성하면 변수를 정의할 수 있으며, 이 때 연산자를 이용해서 상대적인 값으로 지정할 수도 있다. (단 전처리기인 만큼 동적으로 비례해서 변화하진 않는다.)
+
+`@{prefix}` 방식으로 작성하면 선택자에도 변수를 적용하여 동적으로 생성할 수 있다.
 
 ## Mixin
 ```less
