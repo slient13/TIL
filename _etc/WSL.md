@@ -4,7 +4,7 @@
 
 # 사용법
 ## linux 명령어
-[LinuxBasic](../ProgrammingBackground/Infra/Linux/LinuxBasic.md) 참고
+[Linux.Command](../ProgrammingBackground/Infra/OS/Linux/Linux.Command.md) 참고
 
 ## windows 파일 접근
 *Windows*의 파일 시스템은 자체적으로 마운트 되어있다. 가령 `C:/`는 `mnt/c/`에 마운트되어 있다. 이를 통해 자유로이 *windows* 파일에 접근할 수 있다.
