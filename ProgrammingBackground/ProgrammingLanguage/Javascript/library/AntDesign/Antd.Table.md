@@ -1,3 +1,5 @@
+*역링크*: `$= dv.current().file.inlinks.filter((e) => e.path.substring(0, 5) !== "__TIL" && e.path.substring(0, 11) !== "__reference").filter((e) => e.path !== dv.current().file.link.path)`
+
 # 개요
 html 요소 *table*을 *wrapping*한 컴포넌트. table의 기본적인 기능은 물론 복잡한 header 구조나, *summary* 등 유용한 기능들을 복합적으로 제공한다.
 
@@ -9,9 +11,13 @@ const colums = [
 		dataIndex: 'dIndex', // 해당 행에 어떤 값을 매핑할지 결정 (키값으로 매핑)
 		key: 'key', // `동일한 `dataIndex`를 이용해 여러 column 구성할 때 
 					// 서로 다른 column을 구분하기 위해 사용
-		render: (value, record, index) => (string | React.ReactNode)
+		align: 'center', // 행 내용들의 정렬 방식. 헤더까지 영향.
+		render: (value, record, index) => (string | React.ReactNode),
 					// 데이터를 그대로 표시하지 않고 가공해서 보여줄 때 사용.
 					// 행마다 버튼을 만들거나 record 내 소개용 등으로 사용 가능.
+		onCell: () => ({ props }),
+					// 각 셀에 대해 지정한 props을 전달.
+					// 특정 className 할당하거나 할 때 사용.					
 	}
 ]
 
