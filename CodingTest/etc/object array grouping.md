@@ -108,7 +108,7 @@ function groupBy(arr, callback, isAllowNull = true) {
 console.log(testData);
 console.log("==========================");
 const groupedTestData = groupBy(testData, e => [e.a, e.c]);
-console.log(JSON.stringify(groupedTestData, null, 2));
+console.log(JSON.stringify(groupedTestData, true, 2));
 console.log("==========================");
 const groupedTestDataWithoutIncorrectData = groupBy(testData, e => [e.a, e.c], false);
 console.log(JSON.stringify(groupedTestDataWithoutIncorrectData, null, 2));
